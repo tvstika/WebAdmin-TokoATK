@@ -31,31 +31,59 @@ if(isset($_POST["submit"])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data Produk</title>
-</head>
-<body>
-    <h1>Tambah Data Produk</h1>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TOKO ATK | Tambah Data Produk</title>
 
-    <form action="" method="post" enctype="multipart/form-data">
-        <ul>
-            <li>
-                <label for="nama_produk">Nama Produk: </label>
-                <input type="text" name="nama_produk" id="nama_produk" required>
-            </li>
-            <li>
-                <label for="harga_produk">Harga Produk: </label>
-                <input type="text" name="harga_produk" id="harga_produk" required>
-            </li>
-            <li>
-                <label for="gambar_produk">Gambar Produk: </label>
-                <input type="file" name="gambar_produk" id="gambar_produk">
-            </li>
-            <li>
-                <button type="submit" name="submit">Tambah Data</button>
-            </li>
-        </ul>
-    </form>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="assets/plugins/sweetalert2/sweetalert2.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="index2.html"><b>ATK</b> Tambah Data</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Update Data Produk</p>
+
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="nama_produk" id="nama_produk" required>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="harga_produk" id="harga_produk" required>
+        </div>
+        <div class="input-group mb-3">
+            <input type="file" class="form-control" name="gambar_produk" id="gambar_produk" required>
+        </div>
+        <div class="col-4">
+            <button type="submit" name="submit" class="btn btn-primary btn-block">Tambah Data</button>
+        </div>
+      </form>
+
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
 </body>
 </html>
