@@ -18,15 +18,13 @@ if(isset($_POST["submit"])){
         <script>
             alert('Data berhasil diubah!');
             document.location.href='index.php';
-        </script>
-    ";
+        </script>";
     }else{
         echo"
         <script>
             alert('Data gagal diubah!');
             document.location.href='index.php';
-        </script>
-    ";
+        </script>";
     }
 }
 ?>
@@ -57,17 +55,21 @@ if(isset($_POST["submit"])){
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Update Data Produk</p>
+      <p class="login-box-msg">Ubah Data Produk</p>
 
       <form action="" method="post" enctype="multipart/form-data" >
+        <input type="hidden" name="id_produk" value="<?=$prdk["id_produk"];?>">
+        <input type="hidden" name="gambarLama" value="<?=$prdk["gambar_produk"];?>" >
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="nama_produk" id="nama_produk" required value="<?=$prdk["nama_produk"];?>">
+            <input type="text" class="form-control" name="nama_produk" id="nama_produk" value="<?=$prdk["nama_produk"];?>">
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="harga_produk" id="harga_produk" required value="<?=$prdk["harga_produk"];?>">
+            <input type="text" class="form-control" name="harga_produk" id="harga_produk" value="<?=$prdk["harga_produk"];?>">
         </div>
+        <img src="gambar/<?= $prdk['gambar_produk']; ?>" width="70"">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="gambar_produk" id="gambar_produk" required value="<?=$prdk["gambar_produk"];?>">
+            <input type="file" class="custom-file-input"name="gambar_produk" id="gambar_produk" value="<?=$prdk["gambar_produk"];?>">
+            <label class="custom-file-label"for="exampleInputFile"></label>
         </div>
         <div class="col-4">
             <button type="submit" name="submit" class="btn btn-primary btn-block">Update Data</button>

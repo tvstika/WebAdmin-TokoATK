@@ -58,13 +58,14 @@ if(isset($_POST["submit"])){
 
       <form action="" method="post" enctype="multipart/form-data">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="nama_produk" id="nama_produk" required>
+            <input type="text" class="form-control" name="nama_produk" id="nama_produk" placeholder="Nama Produk" required>
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="harga_produk" id="harga_produk" required>
+            <input type="text" class="form-control" name="harga_produk" id="harga_produk" placeholder="Harga Produk" required>
         </div>
         <div class="input-group mb-3">
-            <input type="file" class="form-control" name="gambar_produk" id="gambar_produk" required>
+            <input type="file" class="custom-file-input" name="gambar_produk" id="gambar_produk" required>
+            <label class="custom-file-label" for="exampleInputFile">Gambar Produk</label>
         </div>
         <div class="col-4">
             <button type="submit" name="submit" class="btn btn-primary btn-block">Tambah Data</button>

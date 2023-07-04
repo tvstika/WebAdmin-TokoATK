@@ -23,8 +23,7 @@ function tambah($data){
         return false;
     }
 
-    $query="INSERT INTO produk VALUES ('', '$nama_produk', '$harga_produk', '$gambar_produk')
-    ";
+    $query="INSERT INTO produk VALUES ('', '$nama_produk', '$harga_produk', '$gambar_produk')";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -37,12 +36,11 @@ function upload(){
     $tmpName=$_FILES['gambar_produk']['tmp_name'];
 
     //cek apakah ada gambar diupload
-    if($error ===4){
+    if($error===4){
         echo"
         <script>
         alert('Pilih gambar terlebih dahulu!');
-        </script>
-        ";
+        </script>";
 
         return false;
     }
@@ -95,11 +93,16 @@ function ubah($data){
     $id_produk=$data["id_produk"];
     $nama_produk=htmlspecialchars($data["nama_produk"]);
     $harga_produk=htmlspecialchars($data["harga_produk"]);
-    $gambar_produk=htmlspecialchars($data["gambar_produk"]);
+    $gambarLama=htmlspecialchars($data["gambarLama"]);
 
+    //cek ada gambar baru atau tidak
+    if($_FILES['gambar_produk']['error']===4){
+        $gambar_produk=$gambarLama;
+    }else{
+        $gambar_produk=upload();
+    }
 
-    $query="UPDATE produk SET nama_produk='$nama_produk', harga_produk='$harga_produk', gambar_produk='$gambar_produk' WHERE id_produk=$id_produk
-    ";
+    $query="UPDATE produk SET nama_produk='$nama_produk', harga_produk='$harga_produk', gambar_produk='$gambar_produk' WHERE id_produk=$id_produk";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
