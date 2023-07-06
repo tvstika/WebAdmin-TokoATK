@@ -55,9 +55,11 @@ if(isset($_POST["cari"])){
         <div class="navbar-search-block">
           <form action="" method="post" class="from-inline">
               <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="text" name="keyword" autofocus placeholder="Cari produk" autocomplete="off" aria-label="Search">
+              <input class="form-control form-control-lg" type="text" name="keyword" autofocus placeholder="Cari produk" autocomplete="off" aria-label="Search">
                 <div class="input-group-append">
-                <button type="submit" name="cari" <i class="fas fa-search" class="btn btn-navbar"></i></button>
+                <button type="submit" name="cari" class="btn btn-lg btn-default">
+                <i class="fa fa-search"></i>
+                </button>
                 </div>
             </div>
           </form>
@@ -91,10 +93,10 @@ if(isset($_POST["cari"])){
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="gambar/blankprofile.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -123,35 +125,46 @@ if(isset($_POST["cari"])){
           <div class="col-sm-6">
             <h1>TOKO ALAT TULIS KANTOR</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="tambah.php">Tambah Data Produk</a></li>
-            </ol>
-          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
     <section class="content">
-
-          <!-- /.col -->
-          <div class="row">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Daftar Produk</h3>
-
                 <div class="card-tools">
-                  <ul class="pagination pagination-center">
-                  </ul>
+                <ul class="pagination pagination-center"></ul>
                 </div>
+                <div class="card-tools">
+                  <form action="" method="post">
+                  <div class="input-group input-group-sm" style="width: 550px;">
+                  <input type="text" name="keyword" class="form-control float-right" placeholder="Cari Produk" autofocus>
+                    <div class="input-group-append">
+                    <button type="submit" name="cari" class="btn btn-default" style="height: 31px; vertical-align: middle;" >
+                    <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                  </form>
+                    <div>
+                    <a type="button" class="btn btn-primary float-right" href="tambah.php" style="margin-left: 10px;" >
+                    <i class="fas fa-plus"></i>
+                    Tambah Data Produk</a>
+                    </div>
+                  </div>
+                </div> 
+                </div>
+                <div>
+
+             
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table">
+                <table class="table table-sm">
                   <thead>
                     <tr>
-                      <th style="width: 100px">No.</th>
+                      <th style="width: 10px">No.</th>
                       <th>Id Produk</th>
                       <th>Nama Produk</th>
                       <th>Harga Produk</th>
@@ -169,8 +182,12 @@ if(isset($_POST["cari"])){
                         <td><?= $row["harga_produk"]; ?></td>
                         <td><img src="gambar/<?= $row["gambar_produk"]; ?>" width="50"></td>
                         <td>
-                            <a href="ubah.php?id_produk=<?= $row["id_produk"]; ?>">ubah</a>|
-                            <a href="hapus.php?id_produk=<?= $row["id_produk"]; ?>" onclick="return confirm('Hapus produk ini?');">hapus</a>
+                            <a class="btn btn-info btn-sm" href="ubah.php?id_produk=<?= $row["id_produk"]; ?>">
+                            <i class="fas fa-pencil-alt"></i>
+                            ubah</a>
+                            <a class="btn btn-danger btn-sm" href="hapus.php?id_produk=<?= $row["id_produk"]; ?>" onclick="return confirm('Hapus produk ini?');">
+                            <i class="fas fa-trash"></i>
+                            hapus</a>
                         </td>
                     </tr>
                     <?php $i++;?>
